@@ -5,4 +5,4 @@ Bank - has a - >
 Client - has an account - > 
 Account  - > 
 Savings account, Checking account
-BankApp Java file should contain all our classes, it gets extended to every jFrame
+\nBankApp Java file should contain all our classes, it gets extended to every jFrame
