@@ -1,4 +1,16 @@
-BankApp Java file should contain all our classes, it gets extended to every jFrame
-<p>We also have to consider how to get the correct name in, do we need a login page in that case?
-<p> We have discovered an issue where action performed cannot read objects because it is a private method meaning we'd have to remake it every time. To rectify this issue we have an idea: Set the balance to text rather than text to balance.
-<p> How do we log everytime the button is pressed? Is this a priority?
+Plan:
+Create a GUI design
+Test Syntax a possible systems
+Create a prototype
+Refine prototype
+Add extra features
+Finish
+
+Problems so far:
+We also have to consider how to get the correct name in, do we need a login page in that case?
+How do we log everytime the button is pressed? Is this a priority?
+
+Note: BankApp Java file should contain all our classes, it gets extended to every jFrame
+Discoveries:
+We have discovered an issue where action performed cannot read objects because it is a private method meaning we'd have to remake it every time. To rectify this issue we have an idea: Set the balance to text rather than text to balance.
+
