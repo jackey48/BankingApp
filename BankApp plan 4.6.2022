@@ -13,6 +13,8 @@ To rectify this issue we have an idea: Set the balance to text rather than text 
 We also have to consider how to get the correct name in, do we need a login page in that case?
 How do we log everytime the button is pressed? Is this a priority?
 
+Possibly improve the GUI at some point
+
 Note: BankApp Java file should contain all our classes, it gets extended to every jFrame
 Discoveries:
 
