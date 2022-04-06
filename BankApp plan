@@ -7,6 +7,7 @@ Add extra features
 Finish
 
 Problems so far:
+How do we make the computer speed up for timeskip? (Don't have to, click a button, make it do a calculation, set the numbers, done)
 We have discovered an issue where action performed cannot read objects because it is a private method meaning we'd have to remake it every time. 
 To rectify this issue we have an idea: Set the balance to text rather than text to balance.
 
