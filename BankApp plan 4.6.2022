@@ -7,6 +7,8 @@ Add extra features
 Finish
 
 Problems so far:
+The buttons and java swing code cannot access or be accessed by our classes (Solved by creating global variables to save the values for both)
+
 We also have to consider how to get the correct name in, do we need a login page in that case?
 How do we log everytime the button is pressed? Is this a priority?
 
