@@ -12,17 +12,27 @@ package bankingapp;
 class Account {
     String name;
     float balance;
-    float debt;
-    public Account(String name, float balance, float debt) {
+    public Account(String name, float balance) {
         this.name = name;
         this.balance = balance;
-        this.debt = debt;
+        
     }
     public String getName(){
         return name;
     }
     public float getBalance(){
         return balance;
+    }
+    public void round() {
+        balance = Math.round(balance * 100.0f) / 100.0f;
+    }
+
+}
+class CheckingAccount extends Account {
+    float debt;
+    public CheckingAccount((String name, float balance, float debt1){
+        super(name, balance);
+        debt = debt1;
     }
 }
 
@@ -33,8 +43,11 @@ public class BankingApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Account acc1 = new Account("Matthew", 1234, 0);
-        new BankGUI(acc1.getName(), acc1.getBalance()).setVisible(true);
+        Account acc1 = new Account("Matthew", 1234);
+        BankGUI obj = new BankGUI(acc1.getName(), acc1.getBalance());
+        obj.setVisible(true);
+        acc1.balance = obj.balance;
     }
+    
     
 }
