@@ -30,9 +30,13 @@ class Account {
 }
 class CheckingAccount extends Account {
     float debt;
-    public CheckingAccount((String name, float balance, float debt1){
+    public CheckingAccount(String name, float balance, float debt1){
         super(name, balance);
-        debt = debt1;
+        this.debt = debt1;
+    }
+    public void getLoan(){
+        debt += 1000;
+        balance += 1000;
     }
 }
 

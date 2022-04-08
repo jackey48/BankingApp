@@ -4,19 +4,31 @@
  */
 package bankingapp;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author msull1
  */
 public class Savings extends javax.swing.JFrame {
-
+    String name;
+    float balance;
+    
     /**
-     * Creates new form Savings
+     * Creates new form BankGUI
      */
-    public Savings() {
+    public Savings(String name, float balance) {
         initComponents();
+        this.name = name;
+        this.balance = balance;
+        UsernameText.setText(name);
+        jTextField1.setText(String.valueOf(balance));
     }
 
+    public void round() {
+        balance = Math.round(balance * 100.0f) / 100.0f;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,56 +38,56 @@ public class Savings extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
         jPanel1 = new javax.swing.JPanel();
-        BankLabel1 = new javax.swing.JLabel();
-        UsernameText1 = new javax.swing.JTextField();
-        UserLabel1 = new javax.swing.JLabel();
+        BankLabel = new javax.swing.JLabel();
+        UsernameText = new javax.swing.JTextField();
+        UserLabel = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         ConfirmText = new javax.swing.JTextField();
-        DepositConfirm1 = new javax.swing.JButton();
-        DepositClear1 = new javax.swing.JButton();
-        WithdrawConfirm1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        DepositConfirm = new javax.swing.JButton();
+        DepositClear = new javax.swing.JButton();
+        WithdrawConfirm = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        BankLabel2 = new javax.swing.JLabel();
-        UsernameText2 = new javax.swing.JTextField();
-        UserLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        ConfirmText1 = new javax.swing.JTextField();
-        DepositConfirm2 = new javax.swing.JButton();
-        DepositClear2 = new javax.swing.JButton();
-        WithdrawConfirm2 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        jFrame1.setBackground(new java.awt.Color(153, 153, 0));
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 0));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        BankLabel1.setBackground(new java.awt.Color(204, 204, 204));
-        BankLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        BankLabel1.setForeground(new java.awt.Color(0, 51, 153));
-        BankLabel1.setText("Bank Inc. Checking");
+        BankLabel.setBackground(new java.awt.Color(204, 204, 204));
+        BankLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        BankLabel.setForeground(new java.awt.Color(0, 51, 153));
+        BankLabel.setText("Bank Inc. Checking");
 
-        UsernameText1.setEditable(false);
-        UsernameText1.setForeground(new java.awt.Color(0, 51, 153));
-        UsernameText1.setText("jTextField4");
-        UsernameText1.addActionListener(new java.awt.event.ActionListener() {
+        UsernameText.setEditable(false);
+        UsernameText.setForeground(new java.awt.Color(0, 51, 153));
+        UsernameText.setText("jTextField4");
+        UsernameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameText1ActionPerformed(evt);
+                UsernameTextActionPerformed(evt);
             }
         });
 
-        UserLabel1.setForeground(new java.awt.Color(0, 51, 153));
-        UserLabel1.setText("User:");
+        UserLabel.setForeground(new java.awt.Color(0, 51, 153));
+        UserLabel.setText("User:");
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -101,42 +113,30 @@ public class Savings extends javax.swing.JFrame {
             }
         });
 
-        DepositConfirm1.setBackground(new java.awt.Color(242, 242, 242));
-        DepositConfirm1.setForeground(new java.awt.Color(0, 51, 153));
-        DepositConfirm1.setText("Deposit");
-        DepositConfirm1.addActionListener(new java.awt.event.ActionListener() {
+        DepositConfirm.setBackground(new java.awt.Color(242, 242, 242));
+        DepositConfirm.setForeground(new java.awt.Color(0, 51, 153));
+        DepositConfirm.setText("Deposit");
+        DepositConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DepositConfirm1ActionPerformed(evt);
+                DepositConfirmActionPerformed(evt);
             }
         });
 
-        DepositClear1.setBackground(new java.awt.Color(242, 242, 242));
-        DepositClear1.setForeground(new java.awt.Color(0, 51, 153));
-        DepositClear1.setText("Clear");
-        DepositClear1.addActionListener(new java.awt.event.ActionListener() {
+        DepositClear.setBackground(new java.awt.Color(242, 242, 242));
+        DepositClear.setForeground(new java.awt.Color(0, 51, 153));
+        DepositClear.setText("Clear");
+        DepositClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DepositClear1ActionPerformed(evt);
+                DepositClearActionPerformed(evt);
             }
         });
 
-        WithdrawConfirm1.setBackground(new java.awt.Color(242, 242, 242));
-        WithdrawConfirm1.setForeground(new java.awt.Color(0, 51, 153));
-        WithdrawConfirm1.setText("Withdraw");
-        WithdrawConfirm1.addActionListener(new java.awt.event.ActionListener() {
+        WithdrawConfirm.setBackground(new java.awt.Color(242, 242, 242));
+        WithdrawConfirm.setForeground(new java.awt.Color(0, 51, 153));
+        WithdrawConfirm.setText("Withdraw");
+        WithdrawConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WithdrawConfirm1ActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setForeground(new java.awt.Color(0, 51, 153));
-        jLabel6.setText("Savings Account:");
-
-        jButton3.setBackground(new java.awt.Color(242, 242, 242));
-        jButton3.setForeground(new java.awt.Color(0, 51, 153));
-        jButton3.setText("Go");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                WithdrawConfirmActionPerformed(evt);
             }
         });
 
@@ -148,6 +148,18 @@ public class Savings extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+
+        jButton1.setBackground(new java.awt.Color(242, 242, 242));
+        jButton1.setForeground(new java.awt.Color(0, 51, 153));
+        jButton1.setText("Go");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel1.setText("Add Interest:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -163,39 +175,42 @@ public class Savings extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ConfirmText)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(BankLabel1)
+                                .addComponent(BankLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(UserLabel1)
+                                .addComponent(UserLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(UsernameText1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(UsernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jButton6))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DepositConfirm1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DepositConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(67, 67, 67)
-                                .addComponent(WithdrawConfirm1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(WithdrawConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                                .addComponent(DepositClear1)))
-                        .addContainerGap())))
+                                .addComponent(DepositClear)))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {DepositClear, DepositConfirm, WithdrawConfirm, jButton1, jButton6});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(UsernameText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(UserLabel1))
-                    .addComponent(BankLabel1))
+                        .addComponent(UsernameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(UserLabel))
+                    .addComponent(BankLabel))
                 .addGap(63, 63, 63)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,297 +219,82 @@ public class Savings extends javax.swing.JFrame {
                 .addComponent(ConfirmText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(WithdrawConfirm1)
-                    .addComponent(DepositClear1)
-                    .addComponent(DepositConfirm1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jButton3))
-                .addGap(38, 38, 38)
+                    .addComponent(WithdrawConfirm)
+                    .addComponent(DepositClear)
+                    .addComponent(DepositConfirm))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel1))
+                .addGap(50, 50, 50)
                 .addComponent(jButton6)
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        BankLabel2.setBackground(new java.awt.Color(204, 204, 204));
-        BankLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        BankLabel2.setForeground(new java.awt.Color(0, 51, 153));
-        BankLabel2.setText("Bank Inc. Savings");
-
-        UsernameText2.setEditable(false);
-        UsernameText2.setForeground(new java.awt.Color(0, 51, 153));
-        UsernameText2.setText("jTextField4");
-        UsernameText2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameText2ActionPerformed(evt);
-            }
-        });
-
-        UserLabel2.setForeground(new java.awt.Color(0, 51, 153));
-        UserLabel2.setText("User:");
-
-        jTextField2.setEditable(false);
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 51, 153));
-        jTextField2.setText("0");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 51, 153));
-        jLabel7.setText("Balance:");
-
-        ConfirmText1.setBackground(new java.awt.Color(242, 242, 242));
-        ConfirmText1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ConfirmText1.setForeground(new java.awt.Color(0, 51, 153));
-        ConfirmText1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ConfirmText1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConfirmText1ActionPerformed(evt);
-            }
-        });
-
-        DepositConfirm2.setBackground(new java.awt.Color(242, 242, 242));
-        DepositConfirm2.setForeground(new java.awt.Color(0, 51, 153));
-        DepositConfirm2.setText("Deposit");
-        DepositConfirm2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DepositConfirm2ActionPerformed(evt);
-            }
-        });
-
-        DepositClear2.setBackground(new java.awt.Color(242, 242, 242));
-        DepositClear2.setForeground(new java.awt.Color(0, 51, 153));
-        DepositClear2.setText("Clear");
-        DepositClear2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DepositClear2ActionPerformed(evt);
-            }
-        });
-
-        WithdrawConfirm2.setBackground(new java.awt.Color(242, 242, 242));
-        WithdrawConfirm2.setForeground(new java.awt.Color(0, 51, 153));
-        WithdrawConfirm2.setText("Withdraw");
-        WithdrawConfirm2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WithdrawConfirm2ActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setForeground(new java.awt.Color(0, 51, 153));
-        jLabel8.setText("Savings Account:");
-
-        jButton4.setBackground(new java.awt.Color(242, 242, 242));
-        jButton4.setForeground(new java.awt.Color(0, 51, 153));
-        jButton4.setText("Go");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setBackground(new java.awt.Color(242, 242, 242));
-        jButton7.setForeground(new java.awt.Color(0, 51, 153));
-        jButton7.setText("Exit");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ConfirmText1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(BankLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                                .addComponent(UserLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(UsernameText2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(DepositConfirm2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(WithdrawConfirm2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(DepositClear2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))))
-                        .addContainerGap())))
-        );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {DepositClear2, DepositConfirm2, WithdrawConfirm2});
-
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(UsernameText2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(UserLabel2))
-                    .addComponent(BankLabel2))
-                .addGap(63, 63, 63)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(44, 44, 44)
-                .addComponent(ConfirmText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(WithdrawConfirm2)
-                    .addComponent(DepositClear2)
-                    .addComponent(DepositConfirm2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jButton4))
-                .addGap(38, 38, 38)
-                .addComponent(jButton7)
-                .addContainerGap())
-        );
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {DepositClear, DepositConfirm, WithdrawConfirm, jButton6});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void UsernameText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameText1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameText1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void ConfirmTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ConfirmTextActionPerformed
-
-    private void DepositConfirm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositConfirm1ActionPerformed
-        // TODO add your handling code here:
-        balance += Float.parseFloat(ConfirmText.getText());
-        jTextField1.setText(String.valueOf(balance));
-    }//GEN-LAST:event_DepositConfirm1ActionPerformed
-
-    private void DepositClear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositClear1ActionPerformed
-        // TODO add your handling code here:
-        ConfirmText.setText("");
-    }//GEN-LAST:event_DepositClear1ActionPerformed
-
-    private void WithdrawConfirm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WithdrawConfirm1ActionPerformed
-        // TODO add your handling code here:
-        float withdrawl = Float.parseFloat(ConfirmText.getText());
-        if (balance >= withdrawl){
-            balance -= withdrawl;
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "Insufficient Funds");
-        }
-        jTextField1.setText(String.valueOf(balance));
-    }//GEN-LAST:event_WithdrawConfirm1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        new Savings().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void UsernameText2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameText2ActionPerformed
+    private void ConfirmTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameText2ActionPerformed
+    }//GEN-LAST:event_ConfirmTextActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void ConfirmText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmText1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ConfirmText1ActionPerformed
-
-    private void DepositConfirm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositConfirm2ActionPerformed
+    private void DepositConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositConfirmActionPerformed
         // TODO add your handling code here:
         balance += Float.parseFloat(ConfirmText.getText());
+        round();
         jTextField1.setText(String.valueOf(balance));
-    }//GEN-LAST:event_DepositConfirm2ActionPerformed
+    }//GEN-LAST:event_DepositConfirmActionPerformed
 
-    private void DepositClear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositClear2ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-        ConfirmText.setText("");
-    }//GEN-LAST:event_DepositClear2ActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void WithdrawConfirm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WithdrawConfirm2ActionPerformed
+    private void WithdrawConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WithdrawConfirmActionPerformed
         // TODO add your handling code here:
         float withdrawl = Float.parseFloat(ConfirmText.getText());
         if (balance >= withdrawl){
-            balance -= withdrawl;
+                   balance -= withdrawl; 
         }
         else {
             JOptionPane.showMessageDialog(null, "Insufficient Funds");
         }
+        round();
         jTextField1.setText(String.valueOf(balance));
-    }//GEN-LAST:event_WithdrawConfirm2ActionPerformed
+    }//GEN-LAST:event_WithdrawConfirmActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void DepositClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositClearActionPerformed
         // TODO add your handling code here:
-        new Savings().setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+        ConfirmText.setText("");
+    }//GEN-LAST:event_DepositClearActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void UsernameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_UsernameTextActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        balance = balance * 1.03f;
+        round();
+        jTextField1.setText(String.valueOf(balance));
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -513,51 +313,37 @@ public class Savings extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Savings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BankGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Savings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BankGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Savings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BankGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Savings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BankGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Savings().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BankLabel1;
-    private javax.swing.JLabel BankLabel2;
+    private javax.swing.JLabel BankLabel;
     private javax.swing.JTextField ConfirmText;
-    private javax.swing.JTextField ConfirmText1;
-    private javax.swing.JButton DepositClear1;
-    private javax.swing.JButton DepositClear2;
-    private javax.swing.JButton DepositConfirm1;
-    private javax.swing.JButton DepositConfirm2;
-    private javax.swing.JLabel UserLabel1;
-    private javax.swing.JLabel UserLabel2;
-    private javax.swing.JTextField UsernameText1;
-    private javax.swing.JTextField UsernameText2;
-    private javax.swing.JButton WithdrawConfirm1;
-    private javax.swing.JButton WithdrawConfirm2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton DepositClear;
+    private javax.swing.JButton DepositConfirm;
+    private javax.swing.JLabel UserLabel;
+    private javax.swing.JTextField UsernameText;
+    private javax.swing.JButton WithdrawConfirm;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JFrame jFrame1;
+    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
