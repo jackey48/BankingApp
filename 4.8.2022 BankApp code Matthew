@@ -1,0 +1,15 @@
+        if (debt > 0) {
+            debt -= Float.parseFloat(ConfirmText.getText());
+            jTextField2.setText(String.valueOf(debt));
+            if (debt < 0) {
+                balance -= debt;
+                debt = 0;
+                jTextField2.setText(String.valueOf(debt));
+                jTextField1.setText(String.valueOf(balance));
+            }
+        }
+        else if (debt <= 0) {
+            balance += Float.parseFloat(ConfirmText.getText());
+            round();
+            jTextField1.setText(String.valueOf(balance));
+        }
