@@ -1,0 +1,30 @@
+class Account {
+    String name;
+    float balance;
+    public Account(String name, float balance) {
+        this.name = name;
+        this.balance = balance;
+        
+    }
+    public String getName(){
+        return name;
+    }
+    public float getBalance(){
+        return balance;
+    }
+    public void round() {
+        balance = Math.round(balance * 100.0f) / 100.0f;
+    }
+
+}
+class CheckingAccount extends Account {
+    float debt;
+    public CheckingAccount(String name, float balance, float debt){
+        super(name,balance);
+        this.debt = debt;
+    }
+    public void getLoan(){
+        debt += 1000;
+        balance += 1000;
+    }
+}
