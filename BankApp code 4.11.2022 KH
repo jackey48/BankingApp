@@ -1,0 +1,20 @@
+//Checking Account Method    
+    public void CheckDebt(float BoxText){
+        if (debt > 0) {
+            debt -= BoxText;
+           if (debt < 0) {
+                balance -= debt;
+                debt = 0;
+            }
+        }
+        else if (debt <= 0) {
+            balance += BoxText;
+            round();
+        }
+    }
+}
+
+//Loan Button
+acc1.balance *= 1.03f;
+acc1.round();
+BalanceText.setText(String.valueOf(acc1.balance));
