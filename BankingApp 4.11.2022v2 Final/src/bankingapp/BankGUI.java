@@ -305,7 +305,7 @@ public class BankGUI extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        new Savings(name, acc1.balance, 0).setVisible(true);
+        new Savings(acc1.name, acc1.balance, 0).setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
