@@ -1,0 +1,14 @@
+    public float interest(float value, float percent) {
+        return (value * percent);
+    }
+    
+    
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        balance = interest(balance, 1.03f);
+        debt = interest(debt, 1.1f);
+        round();
+        jTextField1.setText(String.valueOf(balance));
+        jTextField2.setText(String.valueOf(debt));
+    }   
